@@ -37,20 +37,33 @@
       align-items: center;
     }
 
-    .logo-img {
-      height: 56px;
-      width: auto;
-      object-fit: contain;
-    }
+/* 🔧 Base logo size (Greenleaf) */
+.logo-img {
+  height: 56px;
+  width: auto;
+  object-fit: contain;
+}
 
-    /* 📱 Mobile adjustments */
-    @media (max-width: 640px) {
-      .logo-img {
-        height: 48px;
-      }
+/* 🌿 Yoga Med bigger */
+.yoga-med-logo .logo-img {
+  height: 68px; /* ← بزرگ‌تر از Greenleaf */
+}
 
-      .yoga-med-logo {
-        transform: translateX(-10px);
+/* 📱 Mobile */
+@media (max-width: 640px) {
+  .logo-img {
+    height: 48px;
+  }
+
+  .yoga-med-logo .logo-img {
+    height: 58px;
+  }
+
+  .yoga-med-logo {
+    transform: translateX(-10px);
+  }
+}
+
       }
     }
   </style>
@@ -125,7 +138,7 @@
             </div>
           </div>
 
-          <div class="h-15w-px bg-stone-200"></div>
+          <div class="h-12 w-px bg-stone-200"></div>
 
           <div class="flex flex-col items-center">
             <div class="logo-box">
@@ -188,4 +201,3 @@
 
 </body>
 </html>
-
