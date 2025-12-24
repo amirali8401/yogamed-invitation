@@ -29,8 +29,26 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* 🔧 Mobile-only adjustment for Yoga Med logo */
+    /* 🔧 Unified logo sizing */
+    .logo-box {
+      width: 170px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .logo-img {
+      height: 56px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    /* 📱 Mobile adjustments */
     @media (max-width: 640px) {
+      .logo-img {
+        height: 48px;
+      }
+
       .yoga-med-logo {
         transform: translateX(-10px);
       }
@@ -55,7 +73,7 @@
         </div>
 
         <h1 class="text-4xl tracking-widest text-stone-800 mb-2">TEA CEREMONY</h1>
-        <div class="h-px w-24 bg-green-700 mx-auto mb-4 opacity-50"></div
+        <div class="h-px w-24 bg-green-700 mx-auto mb-4 opacity-50"></div>
       </div>
 
       <!-- Invitation -->
@@ -99,43 +117,33 @@
 
       <!-- Logos -->
       <div class="bg-white p-6 border-t border-stone-200">
-        <div class="flex flex-row flex-nowrap items-center justify-center gap-6">
+        <div class="flex items-center justify-center gap-6">
 
-          <!-- Yoga Med -->
           <div class="flex flex-col items-center yoga-med-logo">
-            <div class="w-[170px] flex flex-col items-center">
-              <img src="yogamed-logo.png"
-     alt="Yoga Med Logo"
-     class="h-18 sm:h-13 w-auto object-contain"
-     loading="lazy" />
-
+            <div class="logo-box">
+              <img src="yogamed-logo.png" alt="Yoga Med Logo" class="logo-img" loading="lazy">
             </div>
           </div>
 
           <div class="h-12 w-px bg-stone-200"></div>
 
-          <!-- Greenleaf -->
           <div class="flex flex-col items-center">
-            <div class="w-[170px] flex flex-col items-center">
-              <img src="greenleaf-logo.jpg" alt="Greenleaf Logo"
-                   class="h-14 w-auto object-contain" loading="lazy" />
+            <div class="logo-box">
+              <img src="greenleaf-logo.jpg" alt="Greenleaf Logo" class="logo-img" loading="lazy">
             </div>
           </div>
 
         </div>
       </div>
 
-      <!-- Video (Vertical) -->
+      <!-- Video -->
       <div class="relative bg-stone-900 mx-auto w-full max-w-md aspect-[9/16]">
-        <video id="ceremonyVideo"
-          class="w-full h-full object-contain bg-black"
-          loop playsinline>
+        <video id="ceremonyVideo" class="w-full h-full object-contain bg-black" loop playsinline>
           <source src="C6281_4.mp4" type="video/mp4">
         </video>
 
         <div class="absolute inset-0 flex items-center justify-center bg-black/20">
-          <button id="playButton"
-            class="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-xl">
+          <button id="playButton" class="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-xl">
             <svg id="playIcon" class="w-6 h-6 ml-1" fill="currentColor" viewBox="0 0 24 24">
               <path d="M8 5v14l11-7z"/>
             </svg>
@@ -177,10 +185,6 @@
       }
     });
   </script>
+
 </body>
 </html>
-
-
-
-
-
